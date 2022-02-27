@@ -1,0 +1,178 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+
+  <head>
+    <title>Accueil</title>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="lib/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="lib/js/bootstrap.min.js">
+    <!-- <link rel="stylesheet" href="css/toastr.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="lib/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style2.css">
+  </head>
+
+<body ng-app="myApp">
+  <div class="header">
+    <h1><img src="img/icon.png" height="80" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" />Signalement
+      Region</h1>
+    <p>Administration des Signalements par region</p>
+  </div>
+
+  <div class="topnav">
+    <a href="carte.html">Carte</a>
+
+    <div ng-controller="out">
+      <a class="butt2" ng-click=logout() style="float:right">Sortir</a>
+    </div>
+  </div>
+
+  <div class="row" ng-controller="recherche">
+    <div class="leftcolumn">
+      <div class="card" ng-controller="details">
+        <h2>Detail Signalement</h2>
+        <p>signalisation Fait par : {{signal.nom}} {{signal.prenom}} </p>
+
+        <p>Type de signalement : {{signal.typesignalement}} </p>
+
+        <p>Region : {{signal.nomregion}} </p>
+
+        <p>Status du signalisation : {{signal.nomstatut}} </p>
+
+
+        <p>Designation : {{signal.designation}} </p>
+
+        <p>Date et heure signalement : {{signal.dateheure}} </p>
+        <a class="button" href="carte.html">Retour vers la carte</a>
+        <!-- <a class="btn btn-outline-secondary" href="carte.html" type="button">Retour vers la carte </a> -->
+      </div>
+    </div>
+
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>Recherche</h2>
+        <form>
+          <label for="fname">Date De</label>
+          <input type="date" id="fname" ng-model="d1">
+          <input type="time" id="fname" ng-model="h1">
+
+          <label for="lname">Jusqu'au</label>
+          <input type="date" id="lname" ng-model="d2" name="lastname">
+          <input type="time" id="lname" ng-model="h2" name="lastname">
+
+          <label for="country">Type de Signalement</label>
+          <select id="country" ng-model="idtype">
+            <!-- <option value="australia">Australia</option> -->
+            <option ng-repeat="x in typesignale"> {{ x.type }}</option>
+          </select>
+          <label for="country">Type de Signalement</label>
+          <select id="country" ng-model="idstatut">
+            <!-- <option value="australia">Australia</option> -->
+            <option ng-repeat="st in statut" ng-value="st.id"> {{st.statut}}</option>
+          </select>
+
+          <input type="submit" ng-click="search()" value="Recherche">
+        </form>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>Footer</h2>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid justify-content-between">
+      <div class="d-flex">
+        <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+        <img src="img/R.png" height="20" alt="MDB Logo" loading="lazy" style="margin-top: 2px;"/>
+        </a>
+      
+      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="Acceuil.html">Administrateur par
+        Region</a>
+      
+   
+      
+      </div>      
+      <ul class="navbar-nav flex-row">
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+          <i class="bi bi-person"></i><strong class="d-none d-sm-block ms-1"></strong>
+        </a>
+      </li>
+      <div ng-controller="out"><button class="btn btn-outline-secondary" ng-click=logout() type="button" aria-expanded="false">Sign out  <i class="bi bi-box-arrow-right"></i></button></div>
+       
+  </div>
+</nav>
+
+<div class="flex-container">
+  
+  <div ng-controller="details">
+    <div class="container" >
+      
+    
+
+    <form class="form-container" >
+      <h2>Detail Signalement</h2> 
+      <p>signalisation Fait par :  {{signal.nom}}  {{signal.prenom}} </p>
+
+      <p>Type de signalement :  {{signal.typesignalement}} </p>
+
+      <p>Region :  {{signal.nomregion}} </p>
+
+      <p>Status du signalisation :  {{signal.nomstatut}} </p>
+
+
+      <p>Designation :  {{signal.designation}} </p>
+
+      <p>Date et heure signalement  :  {{signal.dateheure}} </p>
+
+      <a class="btn btn-outline-secondary" href="carte.html" type="button" >Retour vers la carte  </a>      
+    </form> -->
+
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/toastr.min.js"></script>
+  <script src="lib/angular-route.js"></script>
+  <script src="app/controllers.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>

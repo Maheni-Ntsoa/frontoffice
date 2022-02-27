@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/toastr.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="lib/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <title>Accueil</title>
+</head>
+
+<body ng-app="myApp">
+    <div class="header">
+        <h1><img src="img/icon.png" height="80" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" />Signalement
+            Region</h1>
+        <p>Administration des Signalements par region</p>
+    </div>
+
+    <div class="topnav">
+        <a href="carte.html">Carte</a>
+        
+        <div ng-controller="out">
+            <a class="butt2" ng-click=logout() style="float:right">Sortir</a>
+        </div>
+    </div>
+
+    <div class="row" ng-controller="recherche">
+        <div class="leftcolumn" >
+            <div class="card" ng-controller="andrana" >
+                <h2>Liste de vos Signalements</h2>
+
+                <table id="customers">
+                    <tr>
+                        <th>Designation</th>
+                        <th>typesignalement</th>
+                        <th>Statut</th>
+                        <th>Date et Heure</th>
+                    </tr>
+                    <tr ng-repeat="signe in signal">
+                        <td scope="row">{{signe.designation}}</td>
+                        <td scope="row">{{signe.typesignalement}}</td>
+                        <td scope="row">{{signe.nomstatut}}</td>
+                        <td scope="row">{{signe.dateheure}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card" >
+                <h2>Liste de vos Signalements</h2>
+
+                <table id="customers">
+                    <tr>
+                        <th>Designation</th>
+                        <th>typesignalement</th>
+                        <th>Statut</th>
+                        <th>Date et Heure</th>
+                    </tr>
+                    <tr ng-repeat="signe in rech">
+                        <td scope="row">{{signe.designation}}</td>
+                        <td scope="row">{{signe.typesignalement}}</td>
+                        <td scope="row">{{signe.nomstatut}}</td>
+                        <td scope="row">{{signe.dateheure}}</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+
+        <div class="rightcolumn">
+            <div class="card" >
+                <h2>Recherche</h2>
+                <form>
+                    <label for="fname">Date  De</label>
+                    <input type="date" id="fname" ng-model="d1"  >
+                    <input type="time" id="fname" ng-model="h1"  >
+
+                    <label for="lname">Jusqu'au</label>
+                    <input type="date" id="lname" ng-model="d2" name="lastname" >
+                    <input type="time" id="lname" ng-model="h2" name="lastname" >
+
+                    <label for="country">Type de Signalement</label>
+                    <select id="country" ng-model="idtype">
+                        <!-- <option value="australia">Australia</option> -->
+                        <option ng-repeat="x in typesignale"  > {{ x.type }}</option>
+                    </select>
+                    <label for="country">Type de Signalement</label>
+                    <select id="country" ng-model="idstatut">
+                        <!-- <option value="australia">Australia</option> -->
+                        <option ng-repeat="st in statut" ng-value="st.id"> {{st.statut}}</option>
+                    </select>
+
+                    <input type="submit" ng-click="search()" value="Recherche">
+                </form>
+                </table>
+            </div>
+            <div class="card">
+                <h3>Follow Me</h3>
+                <p>Some text..</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/toastr.min.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="app/controllers.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
