@@ -129,7 +129,7 @@ app.controller('carte', function ($window, $scope, $http) {
     }).addTo(map);
     var marker = [];
     for (let i = 0; i < $scope.signal.length; i++) {
-      marker[i] = L.marker([$scope.signal[i].latitude, $scope.signal[i].longitude]).addTo(map);
+      marker[i] = L.marker([$scope.signal[i].latitude, $scope.signal[i].longitude], { icon: determineColor($scope.rech[i].idstatut) }).addTo(map);
       marker[i].bindPopup('<p>Designation:' + $scope.signal[i].designation + '</p><p>Region:' + $scope.signal[i].nomregion
         + '</p><p>Statut:' + $scope.signal[i].nomstatut + '</p><p><a href="Apropos.html?idsigne='
         + $scope.signal[i].id + '">a propos </a></p>');
