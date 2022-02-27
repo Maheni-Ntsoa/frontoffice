@@ -1,44 +1,33 @@
 {
-  "name": "angular",
+  "name": "frontoffice",
   "version": "1.0.0",
   "description": "Angular JS: an overview ================================================= This example is upgrade of <b>angular js</b> tutorial from <b>[Tableless](http://tableless.com.br/criando-uma-aplicacao-simples-com-angularjs/#.UlnWzGSLIpQ)</b> by <b>[Davi Ferreira](http://tableless.com.br/?author=7)</b>. Features added in the code: Filter, Delete and Edit Products, complete crud.",
-  "main": "myapp.js",
+  "main": "app.js",
   "directories": {
     "lib": "lib",
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "thierry",
-  "license": "ISC",
-  "dependencies": {
-    "ejs": "^2.3.1",
-    "express": "~4.9.x"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "no"
+    "url": "git+https://github.com/Maheni-Ntsoa/frontoffice.git"
   },
-  "engines": {
-    "node": "0.12.2"
+  "author": "thierry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maheni-Ntsoa/frontoffice/issues"
   },
-    "dependencies": {
+  "homepage": "https://github.com/Maheni-Ntsoa/frontoffice#readme",
+  "dependencies": {
+    "express": "^4.16.2",
     "ejs": "^2.3.1",
-    "express": "~4.9.x"
+    "rxjs": "^5.4.2",
   },
   "engines": {
-    "node": "0.12.2"
-  },  "dependencies": {
-    "ejs": "^2.3.1",
-    "express": "~4.9.x"
-  },
-  "engines": {
-    "node": "0.12.2"
-  },
-
-  "keywords": [
-    "qwerty"
-  ]
+    "node": "6.11.0",
+    "npm": "3.10.10"
+  }
 }
+  
