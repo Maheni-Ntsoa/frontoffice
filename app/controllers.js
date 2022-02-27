@@ -40,7 +40,7 @@ app.controller('out', function ($window, $scope) {
 });
 app.controller('getCart', function ($window, $scope) {
   $scope.logcart = function () {
-    $window.location.href = 'cartes.html';
+    $window.location.href = 'carte.html';
   }
 });
 
