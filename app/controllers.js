@@ -78,21 +78,21 @@ app.controller('carte', function ($window, $scope, $http) {
   function determineColor(rating) {
     if (rating === 1) {
       return new L.Icon({
-        iconUrl: '../FrontOfficeAngular/img/marker-icon-2x-yellow.png',
+        iconUrl: '../img/marker-icon-2x-yellow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34]
       });
     } else if (rating === 2) {
       return new L.Icon({
-        iconUrl: '../FrontOfficeAngular/img/marker-icon-2x-orange.png',
+        iconUrl: '../img/marker-icon-2x-orange.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34]
       });
     } else if (rating === 3) {
       return new L.Icon({
-        iconUrl: '../FrontOfficeAngular/img/icon.png',
+        iconUrl: '../img/icon.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34]
