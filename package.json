@@ -1,5 +1,5 @@
 {
-  "name": "node",
+  "name": "angular",
   "version": "1.0.0",
   "description": "Angular JS: an overview ================================================= This example is upgrade of <b>angular js</b> tutorial from <b>[Tableless](http://tableless.com.br/criando-uma-aplicacao-simples-com-angularjs/#.UlnWzGSLIpQ)</b> by <b>[Davi Ferreira](http://tableless.com.br/?author=7)</b>. Features added in the code: Filter, Delete and Edit Products, complete crud.",
   "main": "myapp.js",
@@ -14,18 +14,17 @@
   "author": "thierry",
   "license": "ISC",
   "dependencies": {
-    "leaflet": "^1.7.1"
+    "ejs": "^2.3.1",
+    "express": "~4.9.x"
   },
   "repository": {
     "type": "git",
     "url": "no"
   },
-  "dependencies": {
-    "ejs": "^2.3.1",
-    "express": "~4.9.x"
-  },
   "engines": {
     "node": "0.12.2"
-  }
-
+  },
+  "keywords": [
+    "qwerty"
+  ]
 }
