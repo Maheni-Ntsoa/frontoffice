@@ -21,8 +21,8 @@
         <p>Administration des Signalements par region</p>
     </div>
 
-    <div class="topnav">
-        <a href="carte.html">Carte</a>
+    <div class="topnav" ng-controller="getCart">
+        <a ng-click=logcart()  href="carte.html">Carte</a>
         
         <div ng-controller="out">
             <a class="butt2" ng-click=logout() style="float:right">Sortir</a>
