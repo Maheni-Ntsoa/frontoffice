@@ -75,30 +75,30 @@ app.controller('carte', function ($window, $scope, $http) {
       'Authorization': "Bearer " + $scope.token
     }
   };
-  function determineColor(rating) {
-    if (rating === 1) {
-      return new L.Icon({
-        iconUrl: '../img/marker-icon-2x-yellow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34]
-      });
-    } else if (rating === 2) {
-      return new L.Icon({
-        iconUrl: '../img/marker-icon-2x-orange.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34]
-      });
-    } else if (rating === 3) {
-      return new L.Icon({
-        iconUrl: '../img/icon.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34]
-      });
-    }
-  };
+  // function determineColor(rating) {
+  //   if (rating === 1) {
+  //     return new L.Icon({
+  //       iconUrl: '../img/marker-icon-2x-yellow.png',
+  //       iconSize: [25, 41],
+  //       iconAnchor: [12, 41],
+  //       popupAnchor: [1, -34]
+  //     });
+  //   } else if (rating === 2) {
+  //     return new L.Icon({
+  //       iconUrl: '../img/marker-icon-2x-orange.png',
+  //       iconSize: [25, 41],
+  //       iconAnchor: [12, 41],
+  //       popupAnchor: [1, -34]
+  //     });
+  //   } else if (rating === 3) {
+  //     return new L.Icon({
+  //       iconUrl: '../img/icon.png',
+  //       iconSize: [25, 41],
+  //       iconAnchor: [12, 41],
+  //       popupAnchor: [1, -34]
+  //     });
+  //   }
+  // };
 
   $http.get("https://webservicefoetmo.herokuapp.com/api/adminregion/signalements", config).then(function (response) {
     $scope.signal = response.data;
@@ -124,7 +124,7 @@ app.controller('carte', function ($window, $scope, $http) {
     }).addTo(map);
     var marker = [];
     for (let i = 0; i < $scope.signal.length; i++) {
-      marker[i] = L.marker([$scope.signal[i].latitude, $scope.signal[i].longitude], { icon: determineColor($scope.signal[i].idstatut) }).addTo(map);
+      marker[i] = L.marker([$scope.signal[i].latitude, $scope.signal[i].longitude]).addTo(map);
       marker[i].bindPopup('<p>Designation:' + $scope.signal[i].designation + '</p><p>Region:' + $scope.signal[i].nomregion
         + '</p><p>Statut:' + $scope.signal[i].nomstatut + '</p><p><a href="Apropos.html?idsigne='
         + $scope.signal[i].id + '">a propos </a></p>');
