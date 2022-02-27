@@ -1,0 +1,132 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+
+  <head>
+    <title>Accueil</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/js/bootstrap.min.js">
+    <link rel="stylesheet" href="css/toastr.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="lib/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  </head>
+
+<body ng-app="myApp">
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid justify-content-between">
+        <div class="d-flex">
+          <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+            <img src="img/R.png" height="20" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" />
+          </a>
+          <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="ListeSignal.html">Listes Signal</a>
+          <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="carte.html">Carte</a>
+
+
+
+        </div>
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item me-3 me-lg-1">
+            <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+              <i class="bi bi-person"></i><strong class="d-none d-sm-block ms-1"></strong>
+            </a>
+          </li>
+          <div ng-controller="out"><button class="btn btn-outline-secondary" ng-click=logout() type="button"
+              aria-expanded="false">Sign out <i class="bi bi-box-arrow-right"></i></button></div>
+
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid justify-content-between">
+        <div class="d-flex">
+
+
+
+        </div>
+
+        <div ng-controller="andrana">
+          <form class="input-group w-auto my-auto d-none d-sm-flex">
+            <input ng-model="newR.date1" autocomplete="off" type="date" class="form-control rounded"
+              placeholder="Search" style="min-width: 125px;" />
+            <input ng-model="newR.date2" autocomplete="off" type="date" class="form-control rounded"
+              placeholder="Search" style="min-width: 125px;" />
+            <button class="input-group-text border-0 d-none d-lg-flex" ng-click="recherche(newR)">
+              <span class="input-group-text border-0 d-none d-lg-flex"><i class="bi bi-search"></i></span>
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="flex-container">
+
+
+      <div ng-controller="andrana">
+        <div class="container">
+          <p><a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="carte.html">Carte</a></p>
+          <h3>LISTE SIGNALEMENTS</h3>
+          <table class="table table-success table-striped">
+            <thead>
+                <th scope="col">Designation</th>
+                <th scope="col">typesignalement</th>
+                <th scope="col">Statu</th>
+                <th scope="col">Date et Heure</th>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="signe in signal"  onclick="openForm()">
+                  <td scope="row">{{signe.designation}}</td>
+                  <td scope="row">{{signe.typesignalement}}</td>
+                  <td scope="row">{{signe.nomstatut}}</td>
+                  <td scope="row">{{signe.dateheure}}</td>
+                </tr>
+              </tbody>
+        </table>
+
+
+          <!-- <div class="detail-popup" >
+  <div class="form-popup" id="popupForm">
+    <form class="form-container" >
+      <h2>Detail Signalement</h2> 
+      <img style="width: 50px;" id="image" ng-src="data:image/png;base64,{{data.image}}"></br>
+      <label for="dateHeure">
+        <strong>Date et Heure:</strong>
+      </label>
+      <input type="text" id="dateHeure" value="{{data.dateheure}}" name="email" readonly>
+      <label for="designation">
+        <strong>Designation: </strong>
+      </label>
+      <input type="text" id="designation" value="{{data.designation}}" name="email" readonly>
+      <label for="type">
+        <strong>Type du Signal:</strong>
+      </label>
+      <input type="text" id="type" value="{{data.nomtype}}" name="email" readonly>
+      <label for="region">
+        <strong>Region:</strong>
+      </label>
+      <input type="text" id="region" value="{{data.nomregion}}" name="email" readonly>
+  
+      <label for="longitude">
+        <strong>Statut Actuel:</strong>
+      </label>
+      <input type="text" id="statut" value="{{data.nomstatut}}" name="email" readonly>
+    
+    </form>
+  </div>
+  </div> -->
+
+          <script src="lib/jquery.min.js"></script>
+          <script src="lib/angular.min.js"></script>
+          <script src="lib/toastr.min.js"></script>
+          <script src="lib/angular-route.js"></script>
+          <script src="app/controllers.js"></script>
+          <script src="script.js"></script>
+
+</body>
+
+</html>

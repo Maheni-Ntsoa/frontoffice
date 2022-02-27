@@ -1,0 +1,46 @@
+body {
+    background-color: #a3d5d3;
+    max-height: 100px;
+    margin: auto;
+  }
+.flex-container{
+  display: flex;
+  height: 1000px;
+}
+.menu{
+  width: 300px;
+  height: 200px;
+}
+.detailmenu{
+  width: 250px;
+  height: 300px;
+
+}
+* {
+    box-sizing: border-box;
+}
+    .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 20;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+    }
+    
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+    
+    /* Change the link color on hover */
+    li a:hover {
+      background-color: #555;
+      color: white;
+    }
+    

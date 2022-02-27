@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Signalements</title>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <!-- <link rel="stylesheet" href="css/toastr.css"> -->
+    <!-- <link rel="stylesheet" href="lib/css/bootstrap.min.css"></link> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/homepage.css"> -->
+    <script src="lib/angular.min.js"></script>
+    <link rel="stylesheet" href="css/stylelog.css">
+
+
+</head>
+
+<body>
+    <div class="container" ng-controller="signin">
+
+        <form name="Login" class="form">
+            <h1>Login Region</h1>
+            <input type="text"class="box" ng-model="admin.email" value="jm12@gmail.com" required>
+            <input type="password" class="box" ng-model="admin.mdp" value="qwerty123" class="input-small" required>
+            <input type="submit" value="Login" id="submit" class="btn btn-success" ng-click="log(admin)">
+        </form>
+        <div class="side">
+            <img src="img/attention.png" alt="" >
+        </div>
+
+
+    </div>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="lib/toastr.min.js"></script>
+    <script src="app/controllers.js"></script>
+</body>
+
+</html>
