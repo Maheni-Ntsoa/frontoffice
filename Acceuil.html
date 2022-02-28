@@ -50,7 +50,7 @@
                 </table>
             </div>
             <div class="card" >
-                <h2>Liste de vos Signalements</h2>
+                <h2>Liste de vos Recherches</h2>
 
                 <table id="customers">
                     <tr>
@@ -89,7 +89,7 @@
                         <!-- <option value="australia">Australia</option> -->
                         <option ng-repeat="x in typesignale"  > {{ x.type }}</option>
                     </select>
-                    <label for="country">Type de Signalement</label>
+                    <label for="country">Status</label>
                     <select id="country" ng-model="idstatut">
                         <!-- <option value="australia">Australia</option> -->
                         <option ng-repeat="st in statut" ng-value="st.id"> {{st.statut}}</option>
