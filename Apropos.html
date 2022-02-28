@@ -30,7 +30,7 @@
     </div>
   </div>
 
-  <div class="row" ng-controller="recherche">
+  <div class="row" ng-controller="getCart">
     <div class="leftcolumn">
       <div class="card" ng-controller="details">
         <h2>Detail Signalement</h2>
@@ -46,7 +46,7 @@
         <p>Designation : {{signal.designation}} </p>
 
         <p>Date et heure signalement : {{signal.dateheure}} </p>
-        <a ng-controller="getCart" class="button" ng-click=logcart()>Retour vers la carte</a>
+        <a  class="button" ng-click=logcart()>Retour vers la carte</a>
         <!-- <a class="btn btn-outline-secondary" href="carte.html" type="button">Retour vers la carte </a> -->
       </div>
     </div>
